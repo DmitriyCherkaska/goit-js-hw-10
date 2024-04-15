@@ -21,7 +21,7 @@ flatpickr('#datetime-picker', {
     if (userSelectedDate > currentDate) {
       startButton.disabled = false;
     } else {
-      startButton.disabled = true;
+      buttonStart.disabled = true;
       iziToast.show({
         title: 'Error',
         message: 'Please choose a date in the future!',
@@ -34,10 +34,10 @@ flatpickr('#datetime-picker', {
   },
 });
 
-startButton.addEventListener('click', () => {
-  if (startButton.disabled === false) {
+buttonStart.addEventListener('click', () => {
+  if (buttonStart.disabled === false) {
     setInterval(updateDisplay, 1000);
-    startButton.disabled = true;
+    buttonStart.disabled = true;
     input.disabled = true;
   }
 });
