@@ -3,12 +3,12 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const startButton = document.querySelector('button');
+const buttonStart = document.querySelector('button');
 const input = document.querySelector('#datetime-picker');
 
 let userSelectedDate;
 
-startButton.disabled = true;
+buttonStart.disabled = true;
 
 flatpickr('#datetime-picker', {
   enableTime: true,
