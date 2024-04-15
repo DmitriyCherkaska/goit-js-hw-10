@@ -1,7 +1,7 @@
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const startButton = document.querySelector('button');
 const input = document.querySelector('#datetime-picker');
@@ -51,7 +51,7 @@ function updateDisplay() {
     return;
   }
   const { days, hours, minutes, seconds } = convertMs(remainingTime);
-  const addTimerValue = (value) => String(value).padStart(2, '0');
+  const addTimerValue = value => String(value).padStart(2, '0');
 
   document.querySelector('[data-days]').textContent = addTimerValue(days);
   document.querySelector('[data-hours]').textContent = addTimerValue(hours);
