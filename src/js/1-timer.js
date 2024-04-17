@@ -19,7 +19,7 @@ flatpickr('#datetime-picker', {
     userSelectedDate = selectedDates[0];
     const currentDate = new Date();
     if (userSelectedDate > currentDate) {
-      startButton.disabled = false;
+      buttonStart.disabled = false;
     } else {
       buttonStart.disabled = true;
       iziToast.show({
