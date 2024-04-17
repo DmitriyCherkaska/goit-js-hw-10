@@ -7,6 +7,7 @@ const buttonStart = document.querySelector('button');
 const input = document.querySelector('#datetime-picker');
 
 let userSelectedDate;
+let intervalId;
 
 buttonStart.disabled = true;
 
@@ -36,7 +37,7 @@ flatpickr('#datetime-picker', {
 
 buttonStart.addEventListener('click', () => {
   if (buttonStart.disabled === false) {
-    setInterval(updateDisplay, 1000);
+    intervalId = setInterval(updateDisplay, 1000);
     buttonStart.disabled = true;
     input.disabled = true;
   }
@@ -47,7 +48,7 @@ function updateDisplay() {
   const remainingTime = userSelectedDate - currentDate;
 
   if (remainingTime <= 0) {
-    clearInterval(updateCounter);
+    clearInterval(intervalId);
     return;
   }
   const { days, hours, minutes, seconds } = convertMs(remainingTime);
